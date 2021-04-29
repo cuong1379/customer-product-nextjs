@@ -31,6 +31,20 @@
   padding: 10px;
 }
 
+.contactFrame {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.contactLeft {
+  width: 50%;
+}
+
+.contactRight {
+  width: 50%;
+}
+
 @media only screen and (max-width: 600px) {
   .part2p1 {
     display: block;
@@ -54,5 +68,16 @@
 @media only screen and (max-width: 800px) {
   .frameFooter {
     display: block;
+  }
+  .contactFrame {
+    display: block;
+  }
+
+  .contactLeft {
+    width: 100%;
+  }
+
+  .contactRight {
+    width: 100%;
   }
 }

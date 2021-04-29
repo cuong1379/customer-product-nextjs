@@ -153,7 +153,12 @@ const contact = () => {
                 </li>
               </Link>
               <li style={{ padding: "10px 15px", fontWeight: "100px" }}>
-                <Dropdown overlay={menu} placement="bottomCenter" arrow>
+                <Dropdown
+                  overlay={menu}
+                  placement="bottomCenter"
+                  arrow
+                  trigger={["hover", "click"]}
+                >
                   <span
                     style={{ padding: "5px", cursor: "pointer" }}
                     className={styles.spanHover}
@@ -251,14 +256,8 @@ const contact = () => {
           Liên hệ
         </div>
       </div>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-around",
-          width: "100%",
-        }}
-      >
-        <div style={{ width: "50%" }}>
+      <div className={styles.contactFrame}>
+        <div className={styles.contactLeft}>
           <iframe
             title="Google Map"
             style={{ width: "100%", height: "100%" }}
@@ -266,7 +265,7 @@ const contact = () => {
           ></iframe>
         </div>
 
-        <div style={{ width: "50%" }}>
+        <div className={styles.contactRight}>
           <div
             style={{
               display: "flex",
@@ -424,78 +423,6 @@ const contact = () => {
             </div>
           </div>
         </div>
-      </div>
-      <div
-        style={{
-          textAlign: "center",
-          maxWidth: "1600px",
-          width: "100%",
-          margin: "auto",
-        }}
-      >
-        <h3>
-          Quán lẩu dê Hải Nam với thương hiệu trên 70 năm, tọa lạc ngay trung
-          tâm Quận Bình Tân, đã trở thành cái tên quen thuộc đối với khách hàng
-          khu vực Chợ Lớn nói riêng, địa bàn TP. Hồ Chí Minh nói chung và khách
-          du lịch Trung Quốc, Đài Loan và Đông Nam Á.{" "}
-        </h3>
-
-        <p>
-          Nhà hàng nhận tổ chức và phục vụ nhiều loại hình tiệc: Tiệc cưới theo
-          yêu cầu của khách hàng: phong cách truyền thống Phương Đông hay phong
-          cách hiện đại Phương Tây Tiệc liên hoan, mừng thọ, họp mặt thân mật,
-          v.v… Tổ chức các sự kiện quan trọng như hội nghị khách hàng, đại hội,
-          các buổi lễ ra mắt, v.v… Nhận đặt ăn cho các đoàn khách du lịch. Nhà
-          hàng hân hạnh được đón tiếp quý khách hàng gần xa, được phục vụ quý
-          khách là niềm vinh dự cho chúng tôi.
-        </p>
-        <h3>
-          Quán lẩu dê Hải Nam với thương hiệu trên 70 năm, tọa lạc ngay trung
-          tâm Quận Bình Tân, đã trở thành cái tên quen thuộc đối với khách hàng
-          khu vực Chợ Lớn nói riêng, địa bàn TP. Hồ Chí Minh nói chung và khách
-          du lịch Trung Quốc, Đài Loan và Đông Nam Á.
-        </h3>
-      </div>
-
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          marginTop: "50px",
-          marginBottom: "50px",
-        }}
-      >
-        <div>
-          <Image width={1000} height={1000} alt="meomeo" src="/banggia.jpg" />
-        </div>
-      </div>
-
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          marginTop: "50px",
-          marginBottom: "50px",
-        }}
-      >
-        <div>
-          <Image width={1000} height={1000} alt="meomeo" src="/banggia2.jpg" />
-        </div>
-      </div>
-      <div
-        style={{
-          maxWidth: "1600px",
-          width: "100%",
-          margin: "auto",
-        }}
-      >
-        <h3>
-          239-241 Vành Đai Trong, Phường Bình Trị Đông B, Bình Tân, Hồ Chí Minh{" "}
-          <br></br>
-          Hotline: 0938 624 368 <br></br>
-          Mail: nhahanghaihoang.com <br></br>
-          Website: haihoangbinhtan.com
-        </h3>
       </div>
 
       <div className={styles.frameFooter}>

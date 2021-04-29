@@ -153,7 +153,12 @@ const Book = () => {
                 </li>
               </Link>
               <li style={{ padding: "10px 15px", fontWeight: "100px" }}>
-                <Dropdown overlay={menu} placement="bottomCenter" arrow>
+                <Dropdown
+                  overlay={menu}
+                  placement="bottomCenter"
+                  arrow
+                  trigger={["hover", "click"]}
+                >
                   <span
                     style={{ padding: "5px", cursor: "pointer" }}
                     className={styles.spanHover}

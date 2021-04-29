@@ -288,10 +288,11 @@ const contact = () => {
           </div>
           <div style={{ padding: "30px" }}>
             <div>
-              <img
-                style={{ width: "150px" }}
+              <Image
+                width={150}
+                height={200}
                 alt="meomeo"
-                src={process.env.PUBLIC_URL + "/anhfooter.jpg"}
+                src="/anhfooter.jpg"
               />
             </div>
           </div>

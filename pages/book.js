@@ -286,6 +286,7 @@ const Book = () => {
             onFinish={onFinish}
             validateMessages="Vui long nhap thong tin"
             form={form}
+            initialValues={{}}
           >
             <Form.Item
               name="name"

@@ -164,7 +164,7 @@ const Home = () => {
       width={275}
       height={200}
       src="/brealfast3.jpg"
-      alt="has3"
+      alt="has4"
       onDragStart={handleDragStart}
     />,
     <Image
@@ -185,7 +185,7 @@ const Home = () => {
       width={275}
       height={200}
       src="/brealfast6.jpg"
-      alt="has3"
+      alt="has5"
       onDragStart={handleDragStart}
     />,
   ];
@@ -816,7 +816,7 @@ const Home = () => {
       width={250}
       height={300}
       src="/anh1.jpg"
-      alt="has3"
+      alt="has7"
       onDragStart={handleDragStart}
     />,
     <Image
@@ -837,7 +837,7 @@ const Home = () => {
       width={250}
       height={300}
       src="/anh1.jpg"
-      alt="has3"
+      alt="has8"
       onDragStart={handleDragStart}
     />,
   ];
@@ -1470,6 +1470,7 @@ const Home = () => {
             onFinish={onFinish}
             validateMessages="Vui long nhap thong tin"
             form={form}
+            initialValues={{}}
           >
             <Form.Item
               name="name"
@@ -1508,7 +1509,6 @@ const Home = () => {
               </Form.Item>
 
               <Form.Item
-                style={{ width: "50%" }}
                 name="count"
                 rules={[
                   {
@@ -1518,10 +1518,7 @@ const Home = () => {
                   },
                 ]}
               >
-                <InputNumber
-                  style={{ width: "100%" }}
-                  placeholder="Số chỗ ngồi"
-                />
+                <Input style={{ width: "100%" }} placeholder="Số chỗ ngồi" />
               </Form.Item>
             </div>
 

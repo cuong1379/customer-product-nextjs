@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import "antd/dist/antd.css";
 import axios from "axios";
+import moment from "moment";
 import styles from "./styles/Home.module.css";
 import {
   Carousel,
@@ -78,6 +79,18 @@ const responsive1 = {
   0: { items: 2 },
   568: { items: 4 },
   1024: { items: 6 },
+};
+
+const responsive2 = {
+  0: { items: 1 },
+  568: { items: 2 },
+  1024: { items: 3 },
+};
+
+const responsive4 = {
+  0: { items: 1 },
+  568: { items: 2 },
+  1024: { items: 3 },
 };
 
 const Home = () => {
@@ -437,6 +450,507 @@ const Home = () => {
         }}
       >
         299,000đ
+      </div>
+    </div>,
+  ];
+
+  const items2 = [
+    <div>
+      <Image
+        width={350}
+        height={225}
+        src="/tiec4.jpg"
+        alt="has1"
+        onDragStart={handleDragStart}
+      />
+      <div
+        style={{
+          color: "#990000",
+          fontSize: "15px",
+          fontWeight: "600",
+          marginTop: "10px",
+          marginRight: "20px",
+        }}
+      >
+        TẶNG NGAY MÓN QUÀ YÊU THƯƠNG CHO THƯC KHÁCH KHI ĐẾN DÙNG BỮA TẠI NHÀ
+        HÀNG
+      </div>
+      <div
+        style={{
+          color: "#990000",
+          fontSize: "15px",
+          marginTop: "10px",
+          marginRight: "20px",
+          fontWeight: "300",
+        }}
+      >
+        07/04/2020
+      </div>
+      <div
+        style={{
+          color: "#000",
+          fontSize: "14px",
+          marginTop: "10px",
+          marginRight: "20px",
+          fontWeight: "300",
+        }}
+      >
+        Noel năm 2019 khách đến đông đúc và nhận được quà từ ông già Noel đây -
+        Haihoangbinhtan.com
+      </div>
+    </div>,
+    <div>
+      <Image
+        width={350}
+        height={225}
+        src="/tiec1.jpg"
+        alt="has1"
+        onDragStart={handleDragStart}
+      />
+      <div
+        style={{
+          color: "#990000",
+          fontSize: "15px",
+          fontWeight: "600",
+          marginTop: "10px",
+          marginRight: "20px",
+        }}
+      >
+        TẶNG NGAY MÓN QUÀ YÊU THƯƠNG CHO THƯC KHÁCH KHI ĐẾN DÙNG BỮA TẠI NHÀ
+        HÀNG
+      </div>
+      <div
+        style={{
+          color: "#990000",
+          fontSize: "15px",
+          marginTop: "10px",
+          marginRight: "20px",
+          fontWeight: "300",
+        }}
+      >
+        07/04/2020
+      </div>
+      <div
+        style={{
+          color: "#000",
+          fontSize: "14px",
+          marginTop: "10px",
+          marginRight: "20px",
+          fontWeight: "300",
+        }}
+      >
+        Noel năm 2019 khách đến đông đúc và nhận được quà từ ông già Noel đây -
+        Haihoangbinhtan.com
+      </div>
+    </div>,
+    <div>
+      <Image
+        width={350}
+        height={225}
+        src="/tiec2.jpg"
+        alt="has1"
+        onDragStart={handleDragStart}
+      />
+      <div
+        style={{
+          color: "#990000",
+          fontSize: "15px",
+          fontWeight: "600",
+          marginTop: "10px",
+          marginRight: "20px",
+        }}
+      >
+        TẶNG NGAY MÓN QUÀ YÊU THƯƠNG CHO THƯC KHÁCH KHI ĐẾN DÙNG BỮA TẠI NHÀ
+        HÀNG
+      </div>
+      <div
+        style={{
+          color: "#990000",
+          fontSize: "15px",
+          marginTop: "10px",
+          marginRight: "20px",
+          fontWeight: "300",
+        }}
+      >
+        07/04/2020
+      </div>
+      <div
+        style={{
+          color: "#000",
+          fontSize: "14px",
+          marginTop: "10px",
+          marginRight: "20px",
+          fontWeight: "300",
+        }}
+      >
+        Noel năm 2019 khách đến đông đúc và nhận được quà từ ông già Noel đây -
+        Haihoangbinhtan.com
+      </div>
+    </div>,
+    <div>
+      <Image
+        width={350}
+        height={225}
+        src="/tiec3.jpg"
+        alt="has1"
+        onDragStart={handleDragStart}
+      />
+      <div
+        style={{
+          color: "#990000",
+          fontSize: "15px",
+          fontWeight: "600",
+          marginTop: "10px",
+          marginRight: "20px",
+        }}
+      >
+        TẶNG NGAY MÓN QUÀ YÊU THƯƠNG CHO THƯC KHÁCH KHI ĐẾN DÙNG BỮA TẠI NHÀ
+        HÀNG
+      </div>
+      <div
+        style={{
+          color: "#990000",
+          fontSize: "15px",
+          marginTop: "10px",
+          marginRight: "20px",
+          fontWeight: "300",
+        }}
+      >
+        07/04/2020
+      </div>
+      <div
+        style={{
+          color: "#000",
+          fontSize: "14px",
+          marginTop: "10px",
+          marginRight: "20px",
+          fontWeight: "300",
+        }}
+      >
+        Noel năm 2019 khách đến đông đúc và nhận được quà từ ông già Noel đây -
+        Haihoangbinhtan.com
+      </div>
+    </div>,
+    <div>
+      <Image
+        width={350}
+        height={225}
+        src="/tiec4.jpg"
+        alt="has1"
+        onDragStart={handleDragStart}
+      />
+      <div
+        style={{
+          color: "#990000",
+          fontSize: "15px",
+          fontWeight: "600",
+          marginTop: "10px",
+        }}
+      >
+        TẶNG NGAY MÓN QUÀ YÊU THƯƠNG CHO THƯC KHÁCH KHI ĐẾN DÙNG BỮA TẠI NHÀ
+        HÀNG
+      </div>
+      <div
+        style={{
+          color: "#990000",
+          fontSize: "15px",
+          marginTop: "10px",
+          fontWeight: "300",
+        }}
+      >
+        07/04/2020
+      </div>
+      <div
+        style={{
+          color: "#000",
+          fontSize: "14px",
+          marginTop: "10px",
+          fontWeight: "300",
+        }}
+      >
+        Noel năm 2019 khách đến đông đúc và nhận được quà từ ông già Noel đây -
+        Haihoangbinhtan.com
+      </div>
+    </div>,
+    <div>
+      <Image
+        width={350}
+        height={225}
+        src="/tiec1.jpg"
+        alt="has1"
+        onDragStart={handleDragStart}
+      />
+      <div
+        style={{
+          color: "#990000",
+          fontSize: "15px",
+          fontWeight: "600",
+          marginTop: "10px",
+        }}
+      >
+        TẶNG NGAY MÓN QUÀ YÊU THƯƠNG CHO THƯC KHÁCH KHI ĐẾN DÙNG BỮA TẠI NHÀ
+        HÀNG
+      </div>
+      <div
+        style={{
+          color: "#990000",
+          fontSize: "15px",
+          marginTop: "10px",
+          fontWeight: "300",
+        }}
+      >
+        07/04/2020
+      </div>
+      <div
+        style={{
+          color: "#000",
+          fontSize: "14px",
+          marginTop: "10px",
+          fontWeight: "300",
+        }}
+      >
+        Noel năm 2019 khách đến đông đúc và nhận được quà từ ông già Noel đây -
+        Haihoangbinhtan.com
+      </div>
+    </div>,
+    <div>
+      <Image
+        width={350}
+        height={225}
+        src="/tiec2.jpg"
+        alt="has1"
+        onDragStart={handleDragStart}
+      />
+      <div
+        style={{
+          color: "#990000",
+          fontSize: "15px",
+          fontWeight: "600",
+          marginTop: "10px",
+        }}
+      >
+        TẶNG NGAY MÓN QUÀ YÊU THƯƠNG CHO THƯC KHÁCH KHI ĐẾN DÙNG BỮA TẠI NHÀ
+        HÀNG
+      </div>
+      <div
+        style={{
+          color: "#990000",
+          fontSize: "15px",
+          marginTop: "10px",
+          fontWeight: "300",
+        }}
+      >
+        07/04/2020
+      </div>
+      <div
+        style={{
+          color: "#000",
+          fontSize: "14px",
+          marginTop: "10px",
+          fontWeight: "300",
+        }}
+      >
+        Noel năm 2019 khách đến đông đúc và nhận được quà từ ông già Noel đây -
+        Haihoangbinhtan.com
+      </div>
+    </div>,
+    <div>
+      <Image
+        width={350}
+        height={225}
+        src="/tiec3.jpg"
+        alt="has1"
+        onDragStart={handleDragStart}
+      />
+      <div
+        style={{
+          color: "#990000",
+          fontSize: "15px",
+          fontWeight: "600",
+          marginTop: "10px",
+        }}
+      >
+        TẶNG NGAY MÓN QUÀ YÊU THƯƠNG CHO THƯC KHÁCH KHI ĐẾN DÙNG BỮA TẠI NHÀ
+        HÀNG
+      </div>
+      <div
+        style={{
+          color: "#990000",
+          fontSize: "15px",
+          marginTop: "10px",
+          fontWeight: "300",
+        }}
+      >
+        07/04/2020
+      </div>
+      <div
+        style={{
+          color: "#000",
+          fontSize: "14px",
+          marginTop: "10px",
+          fontWeight: "300",
+        }}
+      >
+        Noel năm 2019 khách đến đông đúc và nhận được quà từ ông già Noel đây -
+        Haihoangbinhtan.com
+      </div>
+    </div>,
+  ];
+
+  const items3 = [
+    <Image
+      width={250}
+      height={300}
+      src="/anh1.jpg"
+      alt="has1"
+      onDragStart={handleDragStart}
+    />,
+    <Image
+      width={250}
+      height={300}
+      src="/anh1.jpg"
+      alt="has2"
+      onDragStart={handleDragStart}
+    />,
+    <Image
+      width={250}
+      height={300}
+      src="/anh1.jpg"
+      alt="has3"
+      onDragStart={handleDragStart}
+    />,
+    <Image
+      width={250}
+      height={300}
+      src="/anh1.jpg"
+      alt="has1"
+      onDragStart={handleDragStart}
+    />,
+    <Image
+      width={250}
+      height={300}
+      src="/anh1.jpg"
+      alt="has2"
+      onDragStart={handleDragStart}
+    />,
+    <Image
+      width={250}
+      height={300}
+      src="/anh1.jpg"
+      alt="has3"
+      onDragStart={handleDragStart}
+    />,
+  ];
+
+  const items4 = [
+    <div style={{ display: "flex" }}>
+      <Image
+        width={100}
+        height={100}
+        style={{
+          borderRadius: "100%",
+          marginRight: "10px",
+        }}
+        src="/avt1.jpg"
+        alt="has1"
+        onDragStart={handleDragStart}
+      />
+      <div>
+        <div
+          style={{
+            fontSize: "15px",
+            fontWeight: "600",
+            marginTop: "10px",
+            marginRight: "20px",
+          }}
+        >
+          Chỉ có thể nói 1 câu ngắn gọn về mọi thứ từ món ăn đến phong cách phục
+          vụ ở quán lẩu dê Hải Nam là " Tuyệt Vời"&nbsp;
+        </div>
+        <div
+          style={{
+            color: "#990000",
+            fontSize: "15px",
+            marginTop: "10px",
+            marginRight: "20px",
+            fontWeight: "300",
+          }}
+        >
+          Mrs.Thủy
+        </div>
+      </div>
+    </div>,
+    <div style={{ display: "flex" }}>
+      <Image
+        width={100}
+        height={100}
+        style={{
+          borderRadius: "100%",
+          marginRight: "10px",
+        }}
+        src="/avt2.jpg"
+        alt="has1"
+        onDragStart={handleDragStart}
+      />
+      <div>
+        <div
+          style={{
+            fontSize: "15px",
+            fontWeight: "600",
+            marginTop: "10px",
+            marginRight: "20px",
+          }}
+        >
+          Ở đây thức ăn rất ngon!
+        </div>
+        <div
+          style={{
+            color: "#990000",
+            fontSize: "15px",
+            marginTop: "10px",
+            marginRight: "20px",
+            fontWeight: "300",
+          }}
+        >
+          Mr.Hoàng
+        </div>
+      </div>
+    </div>,
+    <div style={{ display: "flex" }}>
+      <img
+        width={100}
+        height={100}
+        style={{
+          borderRadius: "100%",
+          marginRight: "10px",
+        }}
+        src="/avt3.jpg"
+        alt="has1"
+        onDragStart={handleDragStart}
+      />
+      <div>
+        <div
+          style={{
+            fontSize: "15px",
+            fontWeight: "600",
+            marginTop: "10px",
+            marginRight: "20px",
+          }}
+        >
+          Vừa rẻ vừa ngon không có gì để chê. Phục vụ chu đáo, nhân viên thân
+          thiện, nhiệt tình. 10 điểm.
+        </div>
+        <div
+          style={{
+            color: "#990000",
+            fontSize: "15px",
+            marginTop: "10px",
+            marginRight: "20px",
+            fontWeight: "300",
+          }}
+        >
+          Mr.Trường
+        </div>
       </div>
     </div>,
   ];
@@ -837,6 +1351,198 @@ const Home = () => {
             disableButtonsControls={true}
             disableDotsControls={true}
           />
+        </div>
+      </div>
+
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <div
+          style={{
+            fontFamily: "Satisfy",
+            color: "#990000",
+            fontSize: "30px",
+            fontWeight: "600",
+            marginTop: "30px",
+            marginLeft: "30px",
+          }}
+        >
+          Sự Kiện - Góc Ẩm Thực
+        </div>
+      </div>
+
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          background: "#fff5e0",
+          padding: "10px",
+        }}
+      >
+        <div
+          style={{
+            maxWidth: "1200px",
+            width: "100%",
+            marginTop: "50px",
+            marginBottom: "30px",
+          }}
+        >
+          <AliceCarousel
+            mouseTracking
+            items={items2}
+            autoPlay={true}
+            autoPlayInterval={2000}
+            infinite={true}
+            responsive={responsive2}
+            disableButtonsControls={true}
+            disableDotsControls={true}
+          />
+        </div>
+      </div>
+
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <div
+          style={{
+            fontFamily: "Satisfy",
+            color: "#990000",
+            fontSize: "30px",
+            fontWeight: "600",
+            marginTop: "50px",
+            marginLeft: "30px",
+          }}
+        >
+          Thư viện ảnh
+        </div>
+      </div>
+
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <div
+          style={{
+            maxWidth: "1200px",
+            width: "100%",
+            marginTop: "50px",
+            paddingBottom: "50px",
+          }}
+        >
+          <AliceCarousel
+            mouseTracking
+            items={items3}
+            autoPlay={true}
+            autoPlayInterval={2000}
+            infinite={true}
+            responsive={responsive}
+            disableButtonsControls={true}
+            disableDotsControls={true}
+          />
+        </div>
+      </div>
+
+      <div
+        style={{
+          backgroundImage: `url("https://haihoangbinhtan.com/uploads/source/slider/nhahanghaihoangbinhtan.jpg")`,
+          backgroundAttachment: "fixed",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <div
+          style={{
+            backgroundColor: "#000",
+            padding: "30px",
+            margin: "30px",
+            maxWidth: "500px",
+            width: "100%",
+          }}
+        >
+          <p
+            style={{
+              textAlign: "center",
+              color: "#ffcc33",
+              fontWeight: "400",
+              fontSize: "25px",
+            }}
+          >
+            YÊU CẦU ĐẶT BÀN
+          </p>
+          <Form
+            name="nest-messages"
+            onFinish={onFinish}
+            validateMessages="Vui long nhap thong tin"
+            form={form}
+          >
+            <Form.Item
+              name="name"
+              rules={[
+                {
+                  required: true,
+                },
+              ]}
+            >
+              <Input placeholder="Tên khách hàng" />
+            </Form.Item>
+
+            <div style={{ display: "flex", justifyContent: "space-between" }}>
+              <Form.Item
+                style={{ width: "50%" }}
+                name="phone"
+                rules={[
+                  {
+                    required: true,
+                  },
+                ]}
+              >
+                <Input placeholder="Số điện thoại" />
+              </Form.Item>
+              <Form.Item name="time">
+                <TimePicker
+                  defaultValue={moment("17:45", format)}
+                  format={format}
+                />
+              </Form.Item>
+            </div>
+
+            <div style={{ display: "flex", justifyContent: "space-between" }}>
+              <Form.Item name="date" label="">
+                <DatePicker placeholder="mm/dd/yy" />
+              </Form.Item>
+
+              <Form.Item
+                style={{ width: "50%" }}
+                name="count"
+                rules={[
+                  {
+                    type: "number",
+                    min: 0,
+                    max: 99,
+                  },
+                ]}
+              >
+                <InputNumber
+                  style={{ width: "100%" }}
+                  placeholder="Số chỗ ngồi"
+                />
+              </Form.Item>
+            </div>
+
+            <Form.Item name="content">
+              <Input.TextArea placeholder="Lời nhắn" />
+            </Form.Item>
+            <Form.Item>
+              <Button
+                htmlType="submit"
+                style={{
+                  width: "100%",
+                  borderRadius: "20px",
+                  backgroundColor: "#cc0000",
+                  color: "white",
+                  border: "none",
+                }}
+              >
+                Gửi Yêu Cầu Đặt Hẹn
+              </Button>
+            </Form.Item>
+          </Form>
         </div>
       </div>
     </div>

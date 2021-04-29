@@ -297,16 +297,8 @@ const introduce = () => {
         </h3>
       </div>
 
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          backgroundColor: "black",
-          color: "white",
-          paddingTop: "30px",
-        }}
-      >
-        <div style={{ marginRight: "30px" }}>
+      <div className={styles.frameFooter}>
+        <div style={{ marginRight: "30px", marginBottom: "30px" }}>
           <div
             style={{
               fontWeight: "500",
@@ -343,7 +335,7 @@ const introduce = () => {
         <div style={{ marginLeft: "30px" }}>
           <iframe
             title="Google Map"
-            style={{ width: "550px", height: "350px" }}
+            style={{ width: "100%", height: "350px" }}
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.807510014489!2d106.61270031472169!3d10.749313662633048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752dcd24fec181%3A0x9305d628f31e46c8!2zMjM5IFbDoG5oIMSQYWkgVHJvbmcsIELDrG5oIFRy4buLIMSQw7RuZyBCLCBCw6xuaCBUw6JuLCBUaMOgbmggcGjhu5EgSOG7kyBDaMOtIE1pbmgsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1617431019274!5m2!1svi!2s"
           ></iframe>
         </div>

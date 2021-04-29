@@ -1545,6 +1545,132 @@ const Home = () => {
           </Form>
         </div>
       </div>
+
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          backgroundColor: "black",
+          color: "white",
+          paddingTop: "30px",
+        }}
+      >
+        <div style={{ marginRight: "30px" }}>
+          <div
+            style={{
+              fontWeight: "500",
+              fontSize: "25px",
+              marginBottom: "15px",
+            }}
+          >
+            Quán lẩu dê Hải Nam
+          </div>
+          <div>
+            <Image
+              width={150}
+              height={200}
+              src="/anhfooter.jpg"
+              alt="heafne"
+              style={{ marginBottom: "15px" }}
+            />
+          </div>
+          <div>
+            Đến với nhà hàng để được phục vụ tốt nhất và trãi nghiệm nhé!
+          </div>
+          <div>
+            239-241 Vành Đai Trong, Phường Bình Trị Đông B, Bình Tân, Hồ Chí
+            Minh
+            <br></br>
+            Hotline: 0938 624 368
+            <br></br>
+            Mail: quananhaihoang@gmail.com
+            <br></br>
+            Website: haihoangbinhtan.com
+          </div>
+        </div>
+
+        <div style={{ marginLeft: "30px" }}>
+          <iframe
+            title="Google Map"
+            style={{ width: "550px", height: "350px" }}
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.807510014489!2d106.61270031472169!3d10.749313662633048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752dcd24fec181%3A0x9305d628f31e46c8!2zMjM5IFbDoG5oIMSQYWkgVHJvbmcsIELDrG5oIFRy4buLIMSQw7RuZyBCLCBCw6xuaCBUw6JuLCBUaMOgbmggcGjhu5EgSOG7kyBDaMOtIE1pbmgsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1617431019274!5m2!1svi!2s"
+          ></iframe>
+        </div>
+      </div>
+
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          backgroundColor: "#282828",
+          color: "white",
+          paddingTop: "15px",
+          paddingBottom: "15px",
+        }}
+      >
+        © 2021 Quán lẩu dê Hải Nam - Thiết kế bởi finx.vn
+      </div>
+
+      <Popover content={content} title="Hải Nam" trigger="hover">
+        <div
+          style={{
+            position: "fixed",
+            bottom: 0,
+            right: 0,
+            width: "250px",
+            height: "30px",
+            backgroundColor: "#1877F2",
+            borderRadius: "3px",
+            color: "white",
+            textAlign: "center",
+          }}
+        >
+          LIÊN HỆ NGAY
+        </div>
+      </Popover>
+
+      <a
+        href="https://zalo.me/0937230388"
+        style={{
+          position: "fixed",
+          left: 0,
+          top: "50%",
+          borderRadius: "100%",
+          color: "white",
+          textAlign: "center",
+          cursor: "pointer",
+        }}
+      >
+        <Image width={80} height={80} alt="meowcon" src="/zalo-4.png" />
+      </a>
+
+      <Modal
+        title="Thông tin chi tiết món ăn"
+        centered
+        visible={visible}
+        onOk={() => setVisible(false)}
+        onCancel={() => setVisible(false)}
+        width={1000}
+        footer={null}
+      >
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <div style={{ width: "60%" }}>
+            <img
+              style={{
+                maxWidth: "500px",
+                maxHeight: "500px",
+              }}
+              alt="mjbb"
+              src={currentProduct.thumbnail}
+            ></img>
+          </div>
+          <div style={{ width: "40%" }}>
+            <h2>Tên món ăn: {currentProduct.name} </h2>
+            <p style={{ color: "red" }}>Giá: {currentProduct.price}</p>
+            <p>Mô tả chi tiết: {currentProduct.description}</p>
+          </div>
+        </div>
+      </Modal>
     </div>
   );
 };

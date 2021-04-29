@@ -968,6 +968,7 @@ const Home = () => {
       >
         <div style={{ display: "flex", alignItems: "center" }}>
           <svg
+            className={styles.svgPhone}
             style={{ width: "25px", fill: "currentColor" }}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 32 32"

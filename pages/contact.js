@@ -66,6 +66,7 @@ const contact = () => {
       >
         <div style={{ display: "flex", alignItems: "center" }}>
           <svg
+            className={styles.svgPhone}
             style={{ width: "25px", fill: "currentColor" }}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 32 32"
@@ -342,6 +343,7 @@ const contact = () => {
                 onFinish={onFinish}
                 validateMessages="Vui long nhap thong tin"
                 form={form}
+                initialValues={{}}
               >
                 <Form.Item
                   name="name"

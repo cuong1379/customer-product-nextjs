@@ -22,17 +22,17 @@ const contact = () => {
   const menu = (
     <Menu style={{ backgroundColor: "#2a2b2e" }}>
       <Menu.Item style={{ color: "#eb7c7c" }}>
-        <Link to="/breakfast" style={{ color: "#eb7c7c" }}>
+        <Link href="/breakfast">
           <p style={{ paddingLeft: "20px", paddingRight: "20px" }}>Ăn sáng</p>
         </Link>
       </Menu.Item>
       <Menu.Item style={{ color: "#eb7c7c" }}>
-        <Link to="/dimsum" style={{ color: "#eb7c7c" }}>
+        <Link href="/dimsum">
           <p style={{ paddingLeft: "20px", paddingRight: "20px" }}>Dimsum</p>
         </Link>
       </Menu.Item>
       <Menu.Item style={{ color: "#eb7c7c" }}>
-        <Link to="/hotpot" style={{ color: "#eb7c7c" }}>
+        <Link href="/hotpot">
           <p style={{ paddingLeft: "20px", paddingRight: "20px" }}>Lẩu</p>
         </Link>
       </Menu.Item>

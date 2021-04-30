@@ -387,18 +387,8 @@ const contact = () => {
                     <DatePicker placeholder="mm/dd/yy" />
                   </Form.Item>
 
-                  <Form.Item
-                    style={{ width: "50%" }}
-                    name="count"
-                    rules={[
-                      {
-                        type: "number",
-                        min: 0,
-                        max: 99,
-                      },
-                    ]}
-                  >
-                    <InputNumber
+                  <Form.Item name="count">
+                    <Input
                       style={{ width: "100%" }}
                       placeholder="Số chỗ ngồi"
                     />

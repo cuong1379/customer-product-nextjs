@@ -1519,16 +1519,7 @@ const Home = () => {
                 <DatePicker placeholder="mm/dd/yy" />
               </Form.Item>
 
-              <Form.Item
-                name="count"
-                rules={[
-                  {
-                    type: "number",
-                    min: 0,
-                    max: 99,
-                  },
-                ]}
-              >
+              <Form.Item name="count">
                 <Input style={{ width: "100%" }} placeholder="Số chỗ ngồi" />
               </Form.Item>
             </div>

@@ -25,7 +25,10 @@ const Book = () => {
     console.log(values);
 
     try {
-      const res = await axios.post("http://localhost:5555/customers", values);
+      const res = await axios.post(
+        "https://production-api-123.herokuapp.com/customers",
+        values
+      );
       console.log(res.data.customer);
       message.success("Đặt bàn thành công");
     } catch (error) {

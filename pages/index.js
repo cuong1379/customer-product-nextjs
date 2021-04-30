@@ -106,7 +106,7 @@ const Home = () => {
   const getProduct = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5555/productions?page=1&limit=12"
+        "https://production-api-123.herokuapp.com/productions?page=1&limit=12"
       );
       console.log(res.data.production);
       setProductList(res.data.production);
@@ -123,7 +123,10 @@ const Home = () => {
     console.log(values);
 
     try {
-      const res = await axios.post("http://localhost:5555/customers", values);
+      const res = await axios.post(
+        "https://production-api-123.herokuapp.com/customers",
+        values
+      );
       console.log(res.data.customer);
       message.success("Đặt bàn thành công");
     } catch (error) {
@@ -135,7 +138,9 @@ const Home = () => {
 
   const handleOpenModal = async (id) => {
     try {
-      const res = await axios.get(`http://localhost:5555/productions/${id}`);
+      const res = await axios.get(
+        `https://production-api-123.herokuapp.com/productions/${id}`
+      );
       setCurrentProduct(res.data.production);
     } catch (error) {
       console.log(error);

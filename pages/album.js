@@ -18,7 +18,9 @@ const album = () => {
 
   const handleOpenModal = async (id) => {
     try {
-      const res = await axios.get(`http://localhost:5555/productions/${id}`);
+      const res = await axios.get(
+        `https://production-api-123.herokuapp.com/productions/${id}`
+      );
       setCurrentProduct(res.data.production);
     } catch (error) {
       console.log(error);
@@ -28,7 +30,9 @@ const album = () => {
 
   const getProduct = async () => {
     try {
-      const res = await axios.get("http://localhost:5555/productions?limit=30");
+      const res = await axios.get(
+        "https://production-api-123.herokuapp.com/productions?limit=30"
+      );
       console.log(res.data.production);
       setProductList(res.data.production);
     } catch (error) {

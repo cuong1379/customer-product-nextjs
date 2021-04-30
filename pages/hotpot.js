@@ -20,7 +20,9 @@ const hotpot = () => {
 
   const handleOpenModal = async (id) => {
     try {
-      const res = await axios.get(`http://localhost:5555/productions/${id}`);
+      const res = await axios.get(
+        `https://production-api-123.herokuapp.com/productions/${id}`
+      );
       setCurrentProduct(res.data.production);
     } catch (error) {
       console.log(error);
@@ -31,7 +33,7 @@ const hotpot = () => {
   const getProduct = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5555/productions?category=hotpot"
+        "https://production-api-123.herokuapp.com/productions?category=hotpot"
       );
       console.log(res.data.production);
       setProductList(res.data.production);

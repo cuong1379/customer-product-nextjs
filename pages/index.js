@@ -147,43 +147,43 @@ const Home = () => {
 
   const items = [
     <Image
-      width={275}
-      height={200}
+      width={350}
+      height={250}
       src="/brealfast1.jpg"
       alt="has1"
       onDragStart={handleDragStart}
     />,
     <Image
-      width={275}
-      height={200}
+      width={350}
+      height={250}
       src="/brealfast2.jpg"
       alt="has2"
       onDragStart={handleDragStart}
     />,
     <Image
-      width={275}
-      height={200}
+      width={350}
+      height={250}
       src="/brealfast3.jpg"
       alt="has4"
       onDragStart={handleDragStart}
     />,
     <Image
-      width={275}
-      height={200}
+      width={350}
+      height={250}
       src="/brealfast4.jpg"
       alt="has1"
       onDragStart={handleDragStart}
     />,
     <Image
-      width={275}
-      height={200}
+      width={350}
+      height={250}
       src="/brealfast5.jpg"
       alt="has2"
       onDragStart={handleDragStart}
     />,
     <Image
-      width={275}
-      height={200}
+      width={350}
+      height={250}
       src="/brealfast6.jpg"
       alt="has5"
       onDragStart={handleDragStart}
@@ -799,43 +799,43 @@ const Home = () => {
 
   const items3 = [
     <Image
-      width={250}
-      height={300}
+      width={350}
+      height={450}
       src="/anh1.jpg"
       alt="has1"
       onDragStart={handleDragStart}
     />,
     <Image
-      width={250}
-      height={300}
+      width={350}
+      height={450}
       src="/anh1.jpg"
       alt="has2"
       onDragStart={handleDragStart}
     />,
     <Image
-      width={250}
-      height={300}
+      width={350}
+      height={450}
       src="/anh1.jpg"
       alt="has7"
       onDragStart={handleDragStart}
     />,
     <Image
-      width={250}
-      height={300}
+      width={350}
+      height={450}
       src="/anh1.jpg"
       alt="has1"
       onDragStart={handleDragStart}
     />,
     <Image
-      width={250}
-      height={300}
+      width={350}
+      height={450}
       src="/anh1.jpg"
       alt="has2"
       onDragStart={handleDragStart}
     />,
     <Image
-      width={250}
-      height={300}
+      width={350}
+      height={450}
       src="/anh1.jpg"
       alt="has8"
       onDragStart={handleDragStart}

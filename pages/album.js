@@ -379,7 +379,10 @@ const album = () => {
         <div style={{ display: "flex", justifyContent: "center" }}>
           <div style={{ width: "60%" }}>
             <img
-              style={{ maxWidth: "500px", maxHeight: "500px" }}
+              style={{
+                objectFit: "cover",
+                width: "90%",
+              }}
               alt="mjbb"
               src={currentProduct.thumbnail}
             ></img>

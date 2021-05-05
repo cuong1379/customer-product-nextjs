@@ -380,6 +380,33 @@ const breakfast = () => {
       >
         © 2021 Quán lẩu dê Hải Nam - Thiết kế bởi finx.vn
       </div>
+      <Modal
+        title="Thông tin chi tiết món ăn"
+        centered
+        visible={visible}
+        onOk={() => setVisible(false)}
+        onCancel={() => setVisible(false)}
+        width={1000}
+        footer={null}
+      >
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <div style={{ width: "60%" }}>
+            <img
+              style={{
+                objectFit: "cover",
+                width: "90%",
+              }}
+              alt="mjbb"
+              src={currentProduct.thumbnail}
+            ></img>
+          </div>
+          <div style={{ width: "40%" }}>
+            <h2>Tên món ăn: {currentProduct.name} </h2>
+            <p style={{ color: "red" }}>Giá: {currentProduct.price}</p>
+            <p>Mô tả chi tiết: {currentProduct.description}</p>
+          </div>
+        </div>
+      </Modal>
     </div>
   );
 };

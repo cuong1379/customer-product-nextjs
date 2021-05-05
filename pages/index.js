@@ -151,48 +151,91 @@ const Home = () => {
   const handleDragStart = (e) => e.preventDefault();
 
   const items = [
-    <Image
-      width={350}
-      height={250}
-      src="/brealfast1.jpg"
-      alt="has1"
-      onDragStart={handleDragStart}
-    />,
-    <Image
-      width={350}
-      height={250}
-      src="/brealfast2.jpg"
-      alt="has2"
-      onDragStart={handleDragStart}
-    />,
-    <Image
-      width={350}
-      height={250}
-      src="/brealfast3.jpg"
-      alt="has4"
-      onDragStart={handleDragStart}
-    />,
-    <Image
-      width={350}
-      height={250}
-      src="/brealfast4.jpg"
-      alt="has1"
-      onDragStart={handleDragStart}
-    />,
-    <Image
-      width={350}
-      height={250}
-      src="/brealfast5.jpg"
-      alt="has2"
-      onDragStart={handleDragStart}
-    />,
-    <Image
-      width={350}
-      height={250}
-      src="/brealfast6.jpg"
-      alt="has5"
-      onDragStart={handleDragStart}
-    />,
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <img
+        src="/brealfast1.jpg"
+        alt="has1"
+        onDragStart={handleDragStart}
+        style={{ width: "90%", objectFit: "cover" }}
+      />
+    </div>,
+
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <img
+        src="/brealfast2.jpg"
+        alt="has2"
+        onDragStart={handleDragStart}
+        style={{ width: "90%", objectFit: "cover" }}
+      />
+    </div>,
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <img
+        src="/brealfast3.jpg"
+        alt="has4"
+        onDragStart={handleDragStart}
+        style={{ width: "90%", objectFit: "cover" }}
+      />
+    </div>,
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <img
+        src="/brealfast4.jpg"
+        alt="has1"
+        onDragStart={handleDragStart}
+        style={{ width: "90%", objectFit: "cover" }}
+      />
+    </div>,
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <img
+        src="/brealfast5.jpg"
+        alt="has2"
+        onDragStart={handleDragStart}
+        style={{ width: "90%", objectFit: "cover" }}
+      />
+    </div>,
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <img
+        src="/brealfast6.jpg"
+        alt="has5"
+        onDragStart={handleDragStart}
+        style={{ width: "90%", objectFit: "cover" }}
+      />
+    </div>,
   ];
 
   const items1 = [
@@ -803,48 +846,93 @@ const Home = () => {
   ];
 
   const items3 = [
-    <Image
-      width={350}
-      height={450}
-      src="/anh1.jpg"
-      alt="has1"
-      onDragStart={handleDragStart}
-    />,
-    <Image
-      width={350}
-      height={450}
-      src="/anh1.jpg"
-      alt="has2"
-      onDragStart={handleDragStart}
-    />,
-    <Image
-      width={350}
-      height={450}
-      src="/anh1.jpg"
-      alt="has7"
-      onDragStart={handleDragStart}
-    />,
-    <Image
-      width={350}
-      height={450}
-      src="/anh1.jpg"
-      alt="has1"
-      onDragStart={handleDragStart}
-    />,
-    <Image
-      width={350}
-      height={450}
-      src="/anh1.jpg"
-      alt="has2"
-      onDragStart={handleDragStart}
-    />,
-    <Image
-      width={350}
-      height={450}
-      src="/anh1.jpg"
-      alt="has8"
-      onDragStart={handleDragStart}
-    />,
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <img
+        style={{ width: "90%", objectFit: "cover" }}
+        src="/anh1.jpg"
+        alt="has1"
+        onDragStart={handleDragStart}
+      />
+    </div>,
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <img
+        style={{ width: "90%", objectFit: "cover" }}
+        src="/anh1.jpg"
+        alt="has2"
+        onDragStart={handleDragStart}
+      />
+    </div>,
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <img
+        style={{ width: "90%", objectFit: "cover" }}
+        src="/anh1.jpg"
+        alt="has7"
+        onDragStart={handleDragStart}
+      />
+    </div>,
+
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <img
+        style={{ width: "90%", objectFit: "cover" }}
+        src="/anh1.jpg"
+        alt="has1"
+        onDragStart={handleDragStart}
+      />
+    </div>,
+
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <img
+        style={{ width: "90%", objectFit: "cover" }}
+        src="/anh1.jpg"
+        alt="has2"
+        onDragStart={handleDragStart}
+      />
+    </div>,
+
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <img
+        style={{ width: "90%", objectFit: "cover" }}
+        src="/anh1.jpg"
+        alt="has8"
+        onDragStart={handleDragStart}
+      />
+    </div>,
   ];
 
   const items4 = [
@@ -1648,8 +1736,8 @@ const Home = () => {
           <div style={{ width: "60%" }}>
             <img
               style={{
-                maxWidth: "500px",
-                maxHeight: "500px",
+                objectFit: "cover",
+                width: "90%",
               }}
               alt="mjbb"
               src={currentProduct.thumbnail}

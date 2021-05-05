@@ -67,7 +67,7 @@ const hotpot = () => {
   );
 
   return (
-    <div>
+    <div style={{ overflowX: "hidden" }}>
       <div
         style={{
           display: "flex",

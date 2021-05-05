@@ -66,7 +66,7 @@ const breakfast = () => {
     </Menu>
   );
   return (
-    <div>
+    <div style={{ overflowX: "hidden" }}>
       <div
         style={{
           display: "flex",

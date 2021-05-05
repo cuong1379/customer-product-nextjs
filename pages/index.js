@@ -159,7 +159,7 @@ const Home = () => {
       }}
     >
       <img
-        src="/brealfast1.jpg"
+        src="/breakfast1.png"
         alt="has1"
         onDragStart={handleDragStart}
         style={{ width: "90%", objectFit: "cover" }}
@@ -174,7 +174,7 @@ const Home = () => {
       }}
     >
       <img
-        src="/brealfast2.jpg"
+        src="/breakfast2.png"
         alt="has2"
         onDragStart={handleDragStart}
         style={{ width: "90%", objectFit: "cover" }}
@@ -188,7 +188,7 @@ const Home = () => {
       }}
     >
       <img
-        src="/brealfast3.jpg"
+        src="/breakfast3.png"
         alt="has4"
         onDragStart={handleDragStart}
         style={{ width: "90%", objectFit: "cover" }}
@@ -202,7 +202,7 @@ const Home = () => {
       }}
     >
       <img
-        src="/brealfast4.jpg"
+        src="/breakfast4.png"
         alt="has1"
         onDragStart={handleDragStart}
         style={{ width: "90%", objectFit: "cover" }}
@@ -216,7 +216,7 @@ const Home = () => {
       }}
     >
       <img
-        src="/brealfast5.jpg"
+        src="/breakfast5.png"
         alt="has2"
         onDragStart={handleDragStart}
         style={{ width: "90%", objectFit: "cover" }}
@@ -230,7 +230,7 @@ const Home = () => {
       }}
     >
       <img
-        src="/brealfast6.jpg"
+        src="/breakfast6.png"
         alt="has5"
         onDragStart={handleDragStart}
         style={{ width: "90%", objectFit: "cover" }}

@@ -4,6 +4,7 @@ import Image from "next/image";
 import "antd/dist/antd.css";
 import axios from "axios";
 import moment from "moment";
+import { useCart } from "react-use-cart";
 import styles from "./styles/Home.module.css";
 import {
   Carousel,
@@ -11,15 +12,15 @@ import {
   Card,
   Form,
   Input,
-  InputNumber,
   Button,
   DatePicker,
   Dropdown,
   Menu,
   TimePicker,
   message,
-  Popover,
   Modal,
+  Badge,
+  Drawer
 } from "antd";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
@@ -43,6 +44,58 @@ const menu = (
     </Menu.Item>
   </Menu>
 );
+
+const foods = [
+  {
+    id: 1,
+    name: "Malm",
+    price: 9900,
+    quantity: 1,
+    description: 'Định lượng: 200g',
+    thumbnail: 'https://images.squarespace-cdn.com/content/v1/53883795e4b016c956b8d243/1551438228969-H0FPV1FO3W5B0QL328AS/chup-anh-thuc-an-1.jpg'
+    
+  },
+  {
+    id: 2,
+    name: "Nordli",
+    price: 16500,
+    quantity: 5,
+    description: 'Định lượng: 200g',
+    thumbnail: 'https://beptueu.vn/hinhanh/tintuc/top-15-hinh-anh-mon-an-ngon-viet-nam-khien-ban-khong-the-roi-mat-1.jpg'
+  },
+  {
+    id: 3,
+    name: "Kullen",
+    price: 4500,
+    quantity: 1,
+    description: 'Định lượng: 200g',
+    thumbnail: 'https://lavenderstudio.com.vn/wp-content/uploads/2017/03/chup-san-pham.jpg'
+  },
+  {
+    id: 4,
+    name: "Cooky",
+    price: 4500,
+    quantity: 1,
+    description: 'Định lượng: 200g',
+    thumbnail: 'https://images.squarespace-cdn.com/content/v1/53883795e4b016c956b8d243/1550052451758-LL5DACGHWUM1MEAI6HOA/chup-anh-mon-an-com-ga-thuong-hai-8.jpg'
+  },
+  {
+    id: 5,
+    name: "Maki",
+    price: 14500,
+    quantity: 1,
+    description: 'Định lượng: 200g',
+    thumbnail: 'https://studiovietnam.com/wp-content/uploads/2022/03/hinh-anh-ve-do-an-22.jpg'
+  },
+  {
+    id: 6,
+    name: "Levender",
+    price: 24500,
+    quantity: 1,
+    description: 'Định lượng: 200g',
+    thumbnail: 'https://hthaostudio.com/wp-content/uploads/2019/08/Anh-food-layout-11-min-1180x760.jpg'
+  },
+];
 
 const content = <div>Vui lòng được phục vụ quý khách!</div>;
 const { Meta } = Card;
@@ -94,30 +147,48 @@ const responsive4 = {
 };
 
 const Home = () => {
-  const [productList, setProductList] = useState([]);
+  // const [productList, setProductList] = useState([]);
   const [form] = Form.useForm();
   const [visible, setVisible] = useState(false);
+  const [openCart, setOpenCart] = useState(false);
   const [currentProduct, setCurrentProduct] = useState({
     name: "",
     price: "",
     description: "",
     thumbnail: "",
   });
-  const getProduct = async () => {
-    try {
-      const res = await axios.get(
-        "https://production-api-123.herokuapp.com/productions?page=1&limit=12"
-      );
-      console.log(res.data.production);
-      setProductList(res.data.production);
-    } catch (error) {
-      console.log(error);
-    }
+  const {
+    isEmpty,
+    totalUniqueItems,
+    itemProducts,
+    updateItemQuantity,
+    removeItem,
+    addItem 
+  } = useCart();
+  // const getProduct = async () => {
+  //   try {
+  //     const res = await axios.get(
+  //       "https://production-api-123.herokuapp.com/productions?page=1&limit=12"
+  //     );
+  //     console.log(res.data.production);
+  //     setProductList(res.data.production);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   getProduct();
+  // }, []);
+
+  const showDrawer = () => {
+    setOpenCart(true);
+  };
+  const onClose = () => {
+    setOpenCart(false);
   };
 
-  useEffect(() => {
-    getProduct();
-  }, []);
+  console.log('meowwwwwwwwww', openCart)
 
   const onFinish = async (values) => {
     console.log(values);
@@ -136,15 +207,16 @@ const Home = () => {
     form.resetFields();
   };
 
-  const handleOpenModal = async (id) => {
-    try {
-      const res = await axios.get(
-        `https://production-api-123.herokuapp.com/productions/${id}`
-      );
-      setCurrentProduct(res.data.production);
-    } catch (error) {
-      console.log(error);
-    }
+  const handleOpenModal = (id) => {
+    // try {
+    //   const res = await axios.get(
+    //     `https://production-api-123.herokuapp.com/productions/${id}`
+    //   );
+    //   setCurrentProduct(res.data.production);
+    // } catch (error) {
+    //   console.log(error);
+    // }
+    setCurrentProduct(foods?.find(x => x?.id == id) || {})
     setVisible(true);
   };
 
@@ -1373,16 +1445,16 @@ const Home = () => {
               gutter: 16,
               xs: 1,
               sm: 2,
-              md: 4,
-              lg: 4,
+              md: 3,
+              lg: 3,
               xl: 4,
               xxl: 4,
             }}
-            dataSource={productList}
+            dataSource={foods}
             renderItem={(item) => (
               <List.Item>
                 <Card
-                  onClick={() => handleOpenModal(item._id)}
+                  onClick={() => handleOpenModal(item.id)}
                   hoverable
                   cover={
                     <img height="250px" alt="example" src={item.thumbnail} />
@@ -1394,10 +1466,20 @@ const Home = () => {
                     style={{
                       marginTop: "15px",
                       color: "red",
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between'
                     }}
                   >
-                    {" "}
-                    {new Intl.NumberFormat().format(item.price)} VNĐ
+                    <span>
+                      {new Intl.NumberFormat().format(item.price)} VNĐ
+                    </span>
+                    <div style={{display: 'flex', alignItems: 'center'}}>
+                      <img src="https://phanexpress.com/WebLauPhan/ship/ship-minus.svg" alt=""/>
+                      <span style={{margin: '0px 10px', color: 'black'}}> 10 </span>
+                      <img src="https://phanexpress.com/WebLauPhan/ship/ship-plus.svg" alt="" onClick={() => addItem(item)} />
+                    </div>
+                    
                   </div>
                 </Card>
               </List.Item>
@@ -1687,26 +1769,8 @@ const Home = () => {
           paddingBottom: "15px",
         }}
       >
-        © 2021 Quán lẩu dê Hải Nam - Thiết kế bởi finx.vn
+        © 2021 Quán lẩu dê Hải Nam
       </div>
-
-      <Popover content={content} title="Hải Nam" trigger="hover">
-        <div
-          style={{
-            position: "fixed",
-            bottom: 0,
-            right: 0,
-            width: "250px",
-            height: "30px",
-            backgroundColor: "#1877F2",
-            borderRadius: "3px",
-            color: "white",
-            textAlign: "center",
-          }}
-        >
-          LIÊN HỆ NGAY
-        </div>
-      </Popover>
 
       <a
         href="https://zalo.me/0937230388"
@@ -1722,6 +1786,30 @@ const Home = () => {
       >
         <Image width={80} height={80} alt="meowcon" src="/zalo-4.png" />
       </a>
+
+      <div style={{position: 'fixed', bottom: 0, left: 0, width: '100%', padding: '15px 10px 10px', backgroundColor: '#8d400a', display: 'flex', justifyContent: 'space-between', alignItems:'center' }}>
+       <div style={{display: 'flex', justifyContent: 'space-between', alignItems:'center'}}>
+        <div onClick={showDrawer}>
+          <Badge count={totalUniqueItems ?? 0}>
+            <img src="/cart.svg" alt="Shopping Cart" width={25} />
+          </Badge>
+        </div>
+
+        <span style={{margin: '0px 0px 0px 30px', color: 'white'}}>Tổng tiền: <b style={{color: '#FF7216'}}>1000</b></span>
+       </div>
+
+        <button style={{
+            background: '#ff7216',
+            borderRadius: '3px',
+            width: '108px',
+            textAlign: 'center',
+            padding: '8px 0',
+            fontSize: '12px',
+            fontWeight: 'bold',
+            border: 'none',
+            color: 'white'
+        }}>Đặt Hàng</button>
+      </div>
 
       <Modal
         title="Thông tin chi tiết món ăn"
@@ -1750,6 +1838,19 @@ const Home = () => {
           </div>
         </div>
       </Modal>
+
+      <Drawer title="CÁC MÓN ĐÃ CHỌN" placement="right" onClose={onClose} open={openCart} zIndex={100000000000}>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+
+      </Drawer>
     </div>
   );
 };

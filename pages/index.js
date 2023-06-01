@@ -1003,6 +1003,7 @@ const Home = () => {
           backgroundColor: "rgb(243, 0, 69)",
           color: "white",
         }}
+        className="padding-x-16px"
       >
         <div style={{ display: "flex", alignItems: "center" }}>
           <svg

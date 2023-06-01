@@ -71,7 +71,6 @@ const foods = [
     id: 'fwecwef',
     name: "Malm",
     price: 9900,
-    quantity: 1,
     description: 'Định lượng: 200g',
     thumbnail: 'https://images.squarespace-cdn.com/content/v1/53883795e4b016c956b8d243/1551438228969-H0FPV1FO3W5B0QL328AS/chup-anh-thuc-an-1.jpg'
     
@@ -80,7 +79,6 @@ const foods = [
     id: 'cwccwegwgb',
     name: "Nordli",
     price: 16500,
-    quantity: 5,
     description: 'Định lượng: 300g, ngon giòn',
     thumbnail: 'https://beptueu.vn/hinhanh/tintuc/top-15-hinh-anh-mon-an-ngon-viet-nam-khien-ban-khong-the-roi-mat-1.jpg'
   },
@@ -88,7 +86,6 @@ const foods = [
     id: 'wgwewefgw',
     name: "Kullen",
     price: 4500,
-    quantity: 1,
     description: 'Định lượng: 400g',
     thumbnail: 'https://lavenderstudio.com.vn/wp-content/uploads/2017/03/chup-san-pham.jpg'
   },
@@ -96,7 +93,6 @@ const foods = [
     id: 'wegwu5h6g5fef',
     name: "Cooky",
     price: 4500,
-    quantity: 1,
     description: 'Định lượng: 500g, ngon giòn',
     thumbnail: 'https://images.squarespace-cdn.com/content/v1/53883795e4b016c956b8d243/1550052451758-LL5DACGHWUM1MEAI6HOA/chup-anh-mon-an-com-ga-thuong-hai-8.jpg'
   },
@@ -104,7 +100,6 @@ const foods = [
     id: 'qefwrtht4frt5',
     name: "Maki",
     price: 14500,
-    quantity: 1,
     description: 'Định lượng: 600g',
     thumbnail: 'https://studiovietnam.com/wp-content/uploads/2022/03/hinh-anh-ve-do-an-22.jpg'
   },
@@ -112,9 +107,50 @@ const foods = [
     id: 'wef34fwef4',
     name: "Levender",
     price: 24500,
-    quantity: 1,
     description: 'Định lượng: 700g, ngon giòn',
     thumbnail: 'https://hthaostudio.com/wp-content/uploads/2019/08/Anh-food-layout-11-min-1180x760.jpg'
+  },
+  {
+    id: 'vsdvnrybetn5',
+    name: "Levender",
+    price: 4550,
+    description: 'Định lượng: 800g',
+    thumbnail: 'https://uploads-ssl.webflow.com/5f37e24d2bb0e5491702cddb/5f7f3dc784183855fde5a89c_dich-vu-chup-anh-mon-an.jpg'
+  },
+  {
+    id: 'bsfbevwverv',
+    name: "Levender",
+    price: 4550,
+    description: 'Định lượng: 800g',
+    thumbnail: 'https://top10quangbinh.vn/wp-content/uploads/2022/10/anh-do-an-20.jpg'
+  },
+  {
+    id: 'stnbwbrntb',
+    name: "Levender",
+    price: 4550,
+    description: 'Định lượng: 800g',
+    thumbnail: 'https://images.pexels.com/photos/1797171/pexels-photo-1797171.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
+  },
+  {
+    id: 'ehthbtrshbtr',
+    name: "Levender",
+    price: 4550,
+    description: 'Định lượng: 800g',
+    thumbnail: 'https://assets.grab.com/wp-content/uploads/sites/11/2019/11/19142939/samlacareview_72488619_745515349298258_676929066594289512_n-e1574145126441.jpg'
+  },
+  {
+    id: 'cswrce',
+    name: "Levender",
+    price: 4550,
+    description: 'Định lượng: 800g',
+    thumbnail: 'https://thegioianh.diendandoanhnghiep.vn/wp-content/uploads/2023/03/vietnamese_food_top_banner.jpeg'
+  },
+  {
+    id: 'tjkkjhgerhj',
+    name: "Levender",
+    price: 4550,
+    description: 'Định lượng: 800g',
+    thumbnail: 'https://afamilycdn.com/WV8iA0A8EAfajQ9tIqEEPbrc36AeNK/Image/2015/08/_20150809105829362.jpg'
   },
 ];
 
@@ -1752,8 +1788,8 @@ const Home = () => {
                     <div className="d-flex">
                       <img src={product?.thumbnail || ''} alt="" className="mr-30px" width={68} height={68} style={{objectFit: 'cover'}} />
                       <div>
-                        <b style={{marginBottom: '8px'}}>{product?.name ?? ''}</b>
-                        <p>{product?.description ?? ''}</p>
+                        <div style={{marginBottom: '8px', fontWeight: 'bold'}}>{product?.name ?? ''}</div>
+                        <div>{product?.description ?? ''}</div>
                       </div>
                     </div>
                     <div>

@@ -1,12 +1,17 @@
 @import '~antd/dist/reset.css';
 
+a {
+    text-decoration: none
+}
 .footer-card-drawer .ant-drawer-header-title {
     display: flex;
     flex-direction: row-reverse;
 }
-
 .footer-card-drawer {
     border-radius: 12px 12px 0px 0px;
+}
+.footer-card-drawer .ant-drawer-close {
+    margin-inline-end: 0px;
 }
 .d-flex {
     display: flex;

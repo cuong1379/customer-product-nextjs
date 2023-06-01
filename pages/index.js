@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import axios from "axios";
@@ -54,6 +54,17 @@ const menu = [
     )
   }
 ];
+
+export function useMounted() {
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  return mounted
+}
+
 
 const foods = [
   {
@@ -207,6 +218,8 @@ const Home = () => {
   }
 
   const handleDragStart = (e) => e.preventDefault();
+
+  const mouted = useMounted()
 
   const items0 = [
     <div
@@ -993,6 +1006,7 @@ const Home = () => {
     </div>,
   ];
 
+  if (!mouted) return <></>
   return (
     <div style={{ overflowX: "hidden" }}>
       <div

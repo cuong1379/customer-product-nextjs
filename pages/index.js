@@ -1207,7 +1207,7 @@ const Home = () => {
       </Carousel>
 
       <div className={styles.part4}>
-        <div>
+        <div className="d-flex justify-content-center">
           <Image
             src="/daubep1.png"
             alt="Picture of the author"
@@ -1225,6 +1225,7 @@ const Home = () => {
               fontWeight: "600",
               marginTop: "50px",
               marginLeft: "30px",
+              textAlign: 'center'
             }}
           >
             Góc Tuyển Dụng
@@ -1261,6 +1262,7 @@ const Home = () => {
               fontWeight: "600",
               marginTop: "30px",
               marginLeft: "30px",
+              textAlign: 'center'
             }}
           >
             Thực Đơn

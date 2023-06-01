@@ -10,7 +10,6 @@ import {
   TimePicker,
   message,
 } from "antd";
-import moment from "moment";
 import axios from "axios";
 import Link from "next/link";
 import Image from "next/image";
@@ -321,7 +320,6 @@ const Book = () => {
               </Form.Item>
               <Form.Item name="time">
                 <TimePicker
-                  defaultValue={moment("17:45", format)}
                   format={format}
                 />
               </Form.Item>

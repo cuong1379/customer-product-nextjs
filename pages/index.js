@@ -1568,7 +1568,6 @@ const Home = () => {
               </Form.Item>
               <Form.Item name="time">
                 <TimePicker
-                  // defaultValue={moment("17:45", format)}
                   format={format}
                 />
               </Form.Item>

@@ -10,7 +10,6 @@ import {
   TimePicker,
   message,
 } from "antd";
-import moment from "moment";
 import Link from "next/link";
 import styles from "./styles/Home.module.css";
 import Image from "next/image";
@@ -373,7 +372,6 @@ const contact = () => {
                   </Form.Item>
                   <Form.Item name="time">
                     <TimePicker
-                      defaultValue={moment("17:45", format)}
                       format={format}
                     />
                   </Form.Item>

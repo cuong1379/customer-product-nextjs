@@ -14,7 +14,6 @@ import moment from "moment";
 import axios from "axios";
 import Link from "next/link";
 import Image from "next/image";
-import "antd/dist/antd.css";
 import styles from "./styles/Home.module.css";
 
 const Book = () => {

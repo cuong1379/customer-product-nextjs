@@ -12,7 +12,6 @@ import {
 } from "antd";
 import moment from "moment";
 import Link from "next/link";
-import "antd/dist/antd.css";
 import styles from "./styles/Home.module.css";
 import Image from "next/image";
 

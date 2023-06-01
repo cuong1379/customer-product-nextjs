@@ -2,7 +2,6 @@ import React from "react";
 import { Dropdown, Menu } from "antd";
 import Link from "next/link";
 import Image from "next/image";
-import "antd/dist/antd.css";
 import styles from "./styles/Home.module.css";
 
 const introduce = () => {

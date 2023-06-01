@@ -1,7 +1,8 @@
 // import "./styles/global.css";
-import { CartProvider, useCart } from "react-use-cart";
+import { CartProvider } from "react-use-cart";
+import './styles/App.css'
 
 // This default export is required in a new `pages/_app.js` file.
 export default function MyApp({ Component, pageProps }) {
-  return <CartProvider> <Component {...pageProps} /> </CartProvider>
+  return <CartProvider id="cart"> <Component {...pageProps} /> </CartProvider>
 }

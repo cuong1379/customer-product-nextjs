@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import "antd/dist/antd.css";
 import axios from "axios";
-import moment from "moment";
 import { useCart } from "react-use-cart";
 import styles from "./styles/Home.module.css";
 import {
@@ -15,7 +13,6 @@ import {
   Button,
   DatePicker,
   Dropdown,
-  Menu,
   TimePicker,
   message,
   Modal,
@@ -25,29 +22,42 @@ import {
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 
-const menu = (
-  <Menu style={{ backgroundColor: "#2a2b2e" }}>
-    <Menu.Item style={{ color: "#eb7c7c" }}>
-      <Link href="/breakfast">
-        <p style={{ paddingLeft: "20px", paddingRight: "20px" }}>Ăn sáng</p>
-      </Link>
-    </Menu.Item>
-    <Menu.Item style={{ color: "#eb7c7c" }}>
-      <Link href="/dimsum">
-        <p style={{ paddingLeft: "20px", paddingRight: "20px" }}>Dimsum</p>
-      </Link>
-    </Menu.Item>
-    <Menu.Item style={{ color: "#eb7c7c" }}>
-      <Link href="/hotpot">
-        <p style={{ paddingLeft: "20px", paddingRight: "20px" }}>Lẩu</p>
-      </Link>
-    </Menu.Item>
-  </Menu>
-);
+const menu = [
+  {
+    key: '1',
+    label: (
+      <div style={{ color: "#eb7c7c" }}>
+        <Link href="/breakfast">
+          <p style={{ paddingLeft: "20px", paddingRight: "20px" }}>Ăn sáng</p>
+        </Link>
+      </div>
+    )
+  },
+  {
+    key: '2',
+    label: (
+      <div style={{ color: "#eb7c7c" }}>
+        <Link href="/dimsum">
+          <p style={{ paddingLeft: "20px", paddingRight: "20px" }}>Dimsum</p>
+        </Link>
+      </div>
+    )
+  },
+  {
+    key: '3',
+    label: (
+      <div style={{ color: "#eb7c7c" }}>
+        <Link href="/hotpot">
+          <p style={{ paddingLeft: "20px", paddingRight: "20px" }}>Lẩu</p>
+        </Link>
+      </div>
+    )
+  }
+];
 
 const foods = [
   {
-    id: 1,
+    id: 'fwecwef',
     name: "Malm",
     price: 9900,
     quantity: 1,
@@ -56,48 +66,47 @@ const foods = [
     
   },
   {
-    id: 2,
+    id: 'cwccwegwgb',
     name: "Nordli",
     price: 16500,
     quantity: 5,
-    description: 'Định lượng: 200g',
+    description: 'Định lượng: 300g, ngon giòn',
     thumbnail: 'https://beptueu.vn/hinhanh/tintuc/top-15-hinh-anh-mon-an-ngon-viet-nam-khien-ban-khong-the-roi-mat-1.jpg'
   },
   {
-    id: 3,
+    id: 'wgwewefgw',
     name: "Kullen",
     price: 4500,
     quantity: 1,
-    description: 'Định lượng: 200g',
+    description: 'Định lượng: 400g',
     thumbnail: 'https://lavenderstudio.com.vn/wp-content/uploads/2017/03/chup-san-pham.jpg'
   },
   {
-    id: 4,
+    id: 'wegwu5h6g5fef',
     name: "Cooky",
     price: 4500,
     quantity: 1,
-    description: 'Định lượng: 200g',
+    description: 'Định lượng: 500g, ngon giòn',
     thumbnail: 'https://images.squarespace-cdn.com/content/v1/53883795e4b016c956b8d243/1550052451758-LL5DACGHWUM1MEAI6HOA/chup-anh-mon-an-com-ga-thuong-hai-8.jpg'
   },
   {
-    id: 5,
+    id: 'qefwrtht4frt5',
     name: "Maki",
     price: 14500,
     quantity: 1,
-    description: 'Định lượng: 200g',
+    description: 'Định lượng: 600g',
     thumbnail: 'https://studiovietnam.com/wp-content/uploads/2022/03/hinh-anh-ve-do-an-22.jpg'
   },
   {
-    id: 6,
+    id: 'wef34fwef4',
     name: "Levender",
     price: 24500,
     quantity: 1,
-    description: 'Định lượng: 200g',
+    description: 'Định lượng: 700g, ngon giòn',
     thumbnail: 'https://hthaostudio.com/wp-content/uploads/2019/08/Anh-food-layout-11-min-1180x760.jpg'
   },
 ];
 
-const content = <div>Vui lòng được phục vụ quý khách!</div>;
 const { Meta } = Card;
 
 const contentStyle1 = {
@@ -140,12 +149,6 @@ const responsive2 = {
   1024: { items: 3 },
 };
 
-const responsive4 = {
-  0: { items: 1 },
-  568: { items: 2 },
-  1024: { items: 3 },
-};
-
 const Home = () => {
   // const [productList, setProductList] = useState([]);
   const [form] = Form.useForm();
@@ -158,28 +161,13 @@ const Home = () => {
     thumbnail: "",
   });
   const {
+    cartTotal,
+    totalItems,
     isEmpty,
-    totalUniqueItems,
-    itemProducts,
+    items,
     updateItemQuantity,
-    removeItem,
-    addItem 
+    addItem
   } = useCart();
-  // const getProduct = async () => {
-  //   try {
-  //     const res = await axios.get(
-  //       "https://production-api-123.herokuapp.com/productions?page=1&limit=12"
-  //     );
-  //     console.log(res.data.production);
-  //     setProductList(res.data.production);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   getProduct();
-  // }, []);
 
   const showDrawer = () => {
     setOpenCart(true);
@@ -188,11 +176,7 @@ const Home = () => {
     setOpenCart(false);
   };
 
-  console.log('meowwwwwwwwww', openCart)
-
   const onFinish = async (values) => {
-    console.log(values);
-
     try {
       const res = await axios.post(
         "https://production-api-123.herokuapp.com/customers",
@@ -208,21 +192,23 @@ const Home = () => {
   };
 
   const handleOpenModal = (id) => {
-    // try {
-    //   const res = await axios.get(
-    //     `https://production-api-123.herokuapp.com/productions/${id}`
-    //   );
-    //   setCurrentProduct(res.data.production);
-    // } catch (error) {
-    //   console.log(error);
-    // }
     setCurrentProduct(foods?.find(x => x?.id == id) || {})
     setVisible(true);
   };
 
+  const handleUpdateQuantity = (thisItem, currentQuantity, isPlus) => {
+    if (!thisItem?.id) return
+    if (!currentQuantity && !isPlus) return
+    if (!currentQuantity && isPlus) {
+      addItem(thisItem)
+      return
+    }
+    updateItemQuantity(thisItem?.id, isPlus ? currentQuantity + 1 : currentQuantity - 1)
+  }
+
   const handleDragStart = (e) => e.preventDefault();
 
-  const items = [
+  const items0 = [
     <div
       style={{
         display: "flex",
@@ -1007,119 +993,6 @@ const Home = () => {
     </div>,
   ];
 
-  const items4 = [
-    <div style={{ display: "flex" }}>
-      <Image
-        width={100}
-        height={100}
-        style={{
-          borderRadius: "100%",
-          marginRight: "10px",
-        }}
-        src="/avt1.jpg"
-        alt="has1"
-        onDragStart={handleDragStart}
-      />
-      <div>
-        <div
-          style={{
-            fontSize: "15px",
-            fontWeight: "600",
-            marginTop: "10px",
-            marginRight: "20px",
-          }}
-        >
-          Chỉ có thể nói 1 câu ngắn gọn về mọi thứ từ món ăn đến phong cách phục
-          vụ ở quán lẩu dê Hải Nam là " Tuyệt Vời"&nbsp;
-        </div>
-        <div
-          style={{
-            color: "#990000",
-            fontSize: "15px",
-            marginTop: "10px",
-            marginRight: "20px",
-            fontWeight: "300",
-          }}
-        >
-          Mrs.Thủy
-        </div>
-      </div>
-    </div>,
-    <div style={{ display: "flex" }}>
-      <Image
-        width={100}
-        height={100}
-        style={{
-          borderRadius: "100%",
-          marginRight: "10px",
-        }}
-        src="/avt2.jpg"
-        alt="has1"
-        onDragStart={handleDragStart}
-      />
-      <div>
-        <div
-          style={{
-            fontSize: "15px",
-            fontWeight: "600",
-            marginTop: "10px",
-            marginRight: "20px",
-          }}
-        >
-          Ở đây thức ăn rất ngon!
-        </div>
-        <div
-          style={{
-            color: "#990000",
-            fontSize: "15px",
-            marginTop: "10px",
-            marginRight: "20px",
-            fontWeight: "300",
-          }}
-        >
-          Mr.Hoàng
-        </div>
-      </div>
-    </div>,
-    <div style={{ display: "flex" }}>
-      <img
-        width={100}
-        height={100}
-        style={{
-          borderRadius: "100%",
-          marginRight: "10px",
-        }}
-        src="/avt3.jpg"
-        alt="has1"
-        onDragStart={handleDragStart}
-      />
-      <div>
-        <div
-          style={{
-            fontSize: "15px",
-            fontWeight: "600",
-            marginTop: "10px",
-            marginRight: "20px",
-          }}
-        >
-          Vừa rẻ vừa ngon không có gì để chê. Phục vụ chu đáo, nhân viên thân
-          thiện, nhiệt tình. 10 điểm.
-        </div>
-        <div
-          style={{
-            color: "#990000",
-            fontSize: "15px",
-            marginTop: "10px",
-            marginRight: "20px",
-            fontWeight: "300",
-          }}
-        >
-          Mr.Trường
-        </div>
-      </div>
-    </div>,
-  ];
-
   return (
     <div style={{ overflowX: "hidden" }}>
       <div
@@ -1221,9 +1094,9 @@ const Home = () => {
               </Link>
               <li style={{ padding: "10px 15px", fontWeight: "100px" }}>
                 <Dropdown
-                  overlay={menu}
-                  placement="bottomCenter"
-                  arrow
+                  menu={{ items: menu }}
+                  placement="bottom"
+                  arrow={false}
                   trigger={["hover", "click"]}
                 >
                   <span
@@ -1392,7 +1265,7 @@ const Home = () => {
         <div style={{ maxWidth: "1200px", width: "100%", marginTop: "50px" }}>
           <AliceCarousel
             mouseTracking
-            items={items}
+            items={items0}
             autoPlay={true}
             autoPlayInterval={2000}
             infinite={true}
@@ -1432,6 +1305,7 @@ const Home = () => {
           paddingTop: "50px",
           paddingBottom: "30px",
         }}
+        className="padding-x-16px"
       >
         <div
           style={{
@@ -1454,12 +1328,11 @@ const Home = () => {
             renderItem={(item) => (
               <List.Item>
                 <Card
-                  onClick={() => handleOpenModal(item.id)}
                   hoverable
                   cover={
-                    <img height="250px" alt="example" src={item.thumbnail} />
+                    <img height="250px" alt="example" src={item.thumbnail} onClick={() => handleOpenModal(item.id)}/>
                   }
-                  style={{ fontSize: "20px", borderRadius: "10px" }}
+                  style={{ borderRadius: "10px" }}
                 >
                   <Meta title={item.name} description={item.description} />
                   <div
@@ -1475,9 +1348,9 @@ const Home = () => {
                       {new Intl.NumberFormat().format(item.price)} VNĐ
                     </span>
                     <div style={{display: 'flex', alignItems: 'center'}}>
-                      <img src="https://phanexpress.com/WebLauPhan/ship/ship-minus.svg" alt=""/>
-                      <span style={{margin: '0px 10px', color: 'black'}}> 10 </span>
-                      <img src="https://phanexpress.com/WebLauPhan/ship/ship-plus.svg" alt="" onClick={() => addItem(item)} />
+                      <img src="https://phanexpress.com/WebLauPhan/ship/ship-minus.svg" alt="" onClick={() => handleUpdateQuantity(item, items?.find(x => x?.id == item?.id)?.quantity ?? 0, false)}/>
+                      <span style={{margin: '0px 10px', color: 'black'}}> {items?.find(x => x?.id == item?.id)?.quantity ?? 0} </span>
+                      <img src="https://phanexpress.com/WebLauPhan/ship/ship-plus.svg" alt="" onClick={() => handleUpdateQuantity(item, items?.find(x => x?.id == item?.id)?.quantity ?? 0, true )} />
                     </div>
                     
                   </div>
@@ -1520,7 +1393,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div style={{ display: "flex", justifyContent: "center" }}>
+      <div style={{ display: "flex", justifyContent: "center" }} className="padding-x-16px">
         <div style={{ maxWidth: "1200px", width: "100%", marginTop: "50px" }}>
           <AliceCarousel
             mouseTracking
@@ -1678,7 +1551,7 @@ const Home = () => {
               </Form.Item>
               <Form.Item name="time">
                 <TimePicker
-                  defaultValue={moment("17:45", format)}
+                  // defaultValue={moment("17:45", format)}
                   format={format}
                 />
               </Form.Item>
@@ -1784,37 +1657,51 @@ const Home = () => {
           cursor: "pointer",
         }}
       >
-        <Image width={80} height={80} alt="meowcon" src="/zalo-4.png" />
+        <Image width={60} height={46} alt="meowcon" src="/zalo-4.png" />
       </a>
 
-      <div style={{position: 'fixed', bottom: 0, left: 0, width: '100%', padding: '15px 10px 10px', backgroundColor: '#8d400a', display: 'flex', justifyContent: 'space-between', alignItems:'center' }}>
-       <div style={{display: 'flex', justifyContent: 'space-between', alignItems:'center'}}>
-        <div onClick={showDrawer}>
-          <Badge count={totalUniqueItems ?? 0}>
-            <img src="/cart.svg" alt="Shopping Cart" width={25} />
-          </Badge>
+      {
+        isEmpty ? '' : <div className="fixed-bottom-cart" style={{position: 'fixed', bottom: 0, left: 0, width: '100%', padding: '15px 10px 10px', backgroundColor: '#8d400a', display: 'flex', justifyContent: 'space-between', alignItems:'center' }}>
+        <div style={{display: 'flex', justifyContent: 'space-between', alignItems:'center'}}>
+         <div onClick={showDrawer}>
+           <Badge count={totalItems ?? 0}>
+             <img src="/cart.svg" alt="Shopping Cart" width={25} />
+           </Badge>
+         </div>
+ 
+         <span onClick={showDrawer} style={{margin: '0px 0px 0px 30px', color: 'white'}}>Tổng tiền: <b style={{color: '#FF7216'}}>{cartTotal ?? 0} đ</b></span>
         </div>
-
-        <span style={{margin: '0px 0px 0px 30px', color: 'white'}}>Tổng tiền: <b style={{color: '#FF7216'}}>1000</b></span>
+ 
+         <button style={{
+             background: '#ff7216',
+             borderRadius: '3px',
+             width: '108px',
+             textAlign: 'center',
+             padding: '8px 0',
+             fontSize: '12px',
+             fontWeight: 'bold',
+             border: 'none',
+             color: 'white'
+         }}>Đặt Hàng</button>
        </div>
+      }
 
-        <button style={{
-            background: '#ff7216',
-            borderRadius: '3px',
-            width: '108px',
-            textAlign: 'center',
-            padding: '8px 0',
-            fontSize: '12px',
-            fontWeight: 'bold',
-            border: 'none',
-            color: 'white'
-        }}>Đặt Hàng</button>
-      </div>
+      {
+        isEmpty ? '' : <div className="fixed-badge-cart" style={{position: 'fixed', top: '50%', right: 0, width: '100%', backgroundColor: '#8d400a', width: 60, height: 60, borderRadius: '50%', justifyContent: 'space-between', alignItems:'center', paddingTop: '8px', paddingLeft: '10px' }}>
+        <div style={{display: 'flex', justifyContent: 'space-between', alignItems:'center'}}>
+         <div onClick={showDrawer}>
+           <Badge count={totalItems ?? 0}>
+             <img src="/cart.svg" alt="Shopping Cart" width={25} />
+           </Badge>
+         </div>
+        </div>
+       </div>
+      }
 
       <Modal
         title="Thông tin chi tiết món ăn"
         centered
-        visible={visible}
+        open={visible}
         onOk={() => setVisible(false)}
         onCancel={() => setVisible(false)}
         width={1000}
@@ -1828,29 +1715,70 @@ const Home = () => {
                 width: "90%",
               }}
               alt="mjbb"
-              src={currentProduct.thumbnail}
+              src={currentProduct?.thumbnail}
             ></img>
           </div>
           <div style={{ width: "40%" }}>
-            <h2>Tên món ăn: {currentProduct.name} </h2>
-            <p style={{ color: "red" }}>Giá: {currentProduct.price}</p>
-            <p>Mô tả chi tiết: {currentProduct.description}</p>
+            <h2>Tên món ăn: {currentProduct?.name} </h2>
+            <p style={{ color: "red" }}>Giá: {currentProduct?.price}</p>
+            <p>Mô tả chi tiết: {currentProduct?.description}</p>
           </div>
         </div>
       </Modal>
 
-      <Drawer title="CÁC MÓN ĐÃ CHỌN" placement="right" onClose={onClose} open={openCart} zIndex={100000000000}>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-
+      {
+        isEmpty ? '' : <Drawer title="CÁC MÓN ĐÃ CHỌN" placement={'bottom'} onClose={onClose} open={openCart} height={'80%'} closeIcon={<span>Xem lại</span>} className="footer-card-drawer">
+          <div className="cart-content-style">
+            <div style={{overflowY: 'auto'}}>
+              {
+                items && items?.map(product => {
+                  return <div key={`${product?.id}-tab`} className="d-flex justify-content-between mb-30px">
+                    <div className="d-flex">
+                      <img src={product?.thumbnail || ''} alt="" className="mr-30px" width={68} height={68} style={{objectFit: 'cover'}} />
+                      <div>
+                        <b style={{marginBottom: '8px'}}>{product?.name ?? ''}</b>
+                        <p>{product?.description ?? ''}</p>
+                      </div>
+                    </div>
+                    <div>
+                      <div style={{textAlign: 'right', fontWeight: 'bold', color: '#ff7216', fontSize: '16px'}}>{new Intl.NumberFormat().format(product?.itemTotal) ?? 0} đ</div>
+                      <div style={{display: 'flex', alignItems: 'center', margin: '15px 0px 0px'}}>
+                        <img src="https://phanexpress.com/WebLauPhan/ship/ship-minus.svg" alt="" onClick={() => handleUpdateQuantity(product, items?.find(x => x?.id == product?.id)?.quantity ?? 0, false)}/>
+                        <span style={{margin: '0px 10px', color: 'black'}}> {items?.find(x => x?.id == product?.id)?.quantity ?? 0} </span>
+                        <img src="https://phanexpress.com/WebLauPhan/ship/ship-plus.svg" alt="" onClick={() => handleUpdateQuantity(product, items?.find(x => x?.id == product?.id)?.quantity ?? 0, true )} />
+                      </div>
+                    </div>
+                  </div>
+                })
+              }
+            </div>
+            
+            <div style={{borderTop: '0.5px solid #c2c2c2', padding: '20px 0px 0px', position: 'sticky', bottom: 0, left: 0 }}>
+              <div className="d-flex align-items-center justify-content-between mb-15px">
+                <span>Tổng hóa đơn</span>
+                <span>{new Intl.NumberFormat().format(cartTotal) ?? 0} đ</span>
+              </div>
+              <div className="d-flex align-items-center justify-content-between mb-15px">
+                <span>Giảm giá khuyến mại</span>
+                <span>0 đ</span>
+              </div>
+              <div className="d-flex align-items-center justify-content-between mb-15px">
+                <span>VAT</span>
+                <span>0 đ</span>
+              </div>
+              <div className="d-flex align-items-center justify-content-between mb-15px">
+                <b>Số tiền cần thanh toán</b>
+                <span style={{textAlign: 'right', fontWeight: 'bold', color: '#ff7216', fontSize: '14px'}}>{new Intl.NumberFormat().format(cartTotal) ?? 0} đ</span>
+              </div>
+              <div style={{textAlign: 'center'}}>{`(Giá trên chưa bao gồm phí vận chuyển)`}</div>
+              <div class="ship-cart-submit" id="submit-cart-mobile">
+                  ĐẶT HÀNG
+              </div>
+            </div>
+          </div>
       </Drawer>
+      }
+      
     </div>
   );
 };

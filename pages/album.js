@@ -3,7 +3,6 @@ import { List, Card, Dropdown, Menu, Modal } from "antd";
 import axios from "axios";
 import Link from "next/link";
 import Image from "next/image";
-import "antd/dist/antd.css";
 import styles from "./styles/Home.module.css";
 
 const album = () => {
@@ -370,7 +369,7 @@ const album = () => {
       <Modal
         title="Thông tin chi tiết món ăn"
         centered
-        visible={visible}
+        open={visible}
         onOk={() => setVisible(false)}
         onCancel={() => setVisible(false)}
         width={1000}

@@ -112,44 +112,44 @@ const foods = [
   },
   {
     id: 'vsdvnrybetn5',
-    name: "Levender",
-    price: 4550,
+    name: "Joe",
+    price: 34550,
     description: 'Định lượng: 800g',
     thumbnail: 'https://uploads-ssl.webflow.com/5f37e24d2bb0e5491702cddb/5f7f3dc784183855fde5a89c_dich-vu-chup-anh-mon-an.jpg'
   },
   {
     id: 'bsfbevwverv',
-    name: "Levender",
-    price: 4550,
-    description: 'Định lượng: 800g',
+    name: "December",
+    price: 2350,
+    description: 'Định lượng: 1200g',
     thumbnail: 'https://top10quangbinh.vn/wp-content/uploads/2022/10/anh-do-an-20.jpg'
   },
   {
     id: 'stnbwbrntb',
-    name: "Levender",
-    price: 4550,
-    description: 'Định lượng: 800g',
+    name: "Alaska",
+    price: 450,
+    description: 'Định lượng: 1500g',
     thumbnail: 'https://images.pexels.com/photos/1797171/pexels-photo-1797171.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
   },
   {
     id: 'ehthbtrshbtr',
-    name: "Levender",
-    price: 4550,
-    description: 'Định lượng: 800g',
+    name: "Michel",
+    price: 41550,
+    description: 'Định lượng: 2800g',
     thumbnail: 'https://assets.grab.com/wp-content/uploads/sites/11/2019/11/19142939/samlacareview_72488619_745515349298258_676929066594289512_n-e1574145126441.jpg'
   },
   {
     id: 'cswrce',
-    name: "Levender",
-    price: 4550,
-    description: 'Định lượng: 800g',
+    name: "Axelator",
+    price: 4850,
+    description: 'Định lượng: 3000g',
     thumbnail: 'https://thegioianh.diendandoanhnghiep.vn/wp-content/uploads/2023/03/vietnamese_food_top_banner.jpeg'
   },
   {
     id: 'tjkkjhgerhj',
-    name: "Levender",
+    name: "Genarator",
     price: 4550,
-    description: 'Định lượng: 800g',
+    description: 'Định lượng: 5000g',
     thumbnail: 'https://afamilycdn.com/WV8iA0A8EAfajQ9tIqEEPbrc36AeNK/Image/2015/08/_20150809105829362.jpg'
   },
 ];

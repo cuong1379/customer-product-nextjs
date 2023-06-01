@@ -12,6 +12,7 @@ a {
 }
 .footer-card-drawer .ant-drawer-close {
     margin-inline-end: 0px;
+    float: right;
 }
 .d-flex {
     display: flex;
